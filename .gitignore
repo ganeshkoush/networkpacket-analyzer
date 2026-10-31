@@ -1,0 +1,37 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/data/
+*.db
+*.sqlite3
+.env
+
+# Node / frontend
+node_modules/
+desktop/dist/
+
+# Packaged backend (PyInstaller output)
+/build/
+
+# Tauri / Rust
+desktop/src-tauri/target/
+desktop/src-tauri/gen/
+
+# User data (captures can contain sensitive traffic). Saved and imported capture files live in captures/ (and are staged in
+# backend/data/uploads/ while importing); exported copies and stray captures in the project root are ignored too.
+captures/*
+!captures/.gitkeep
+/*.pcap
+/*.pcapng
+backend/data/
+reports/*
+!reports/.gitkeep
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+.env.*
+!.env.example

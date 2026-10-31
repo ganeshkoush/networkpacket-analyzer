@@ -1,0 +1,18 @@
+# Runtime dependencies (what the packaged backend bundles). Development/test/build tools live in requirements-dev.txt.
+# Web API
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.8
+pydantic-settings>=2.4
+
+# Packet analysis (offline parsing and live capture; pyshark/tshark are not used by the app)
+scapy>=2.6
+
+# Database
+sqlalchemy>=2.0
+
+# AI (Gemini via the official Google Gen AI SDK)
+google-genai>=1.0
+
+# API key storage in the OS keychain
+keyring>=25

@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* surfaces */
+  --color-bg: #0b0f14;
+  --color-surface: #11171e;
+  --color-surface-2: #17202a;
+  --color-surface-3: #1d2733;
+  --color-line: #243140;
+  --color-line-strong: #34465a;
+  /* text: ink 13:1, ink-2 7.5:1, ink-3 5:1 on surface */
+  --color-ink: #dce4ec;
+  --color-ink-2: #9fadbb;
+  --color-ink-3: #8191a1;
+  --color-accent: #3fb6b2;
+  --color-ok: #35c98a;
+  --radius-panel: 0.5rem;
+  --ease-ui: cubic-bezier(0.2, 0, 0, 1);
+
+  /* severity (status colors: always paired with a text label) */
+  --color-sev-critical: #ff6b78;
+  --color-sev-high: #ff9d42;
+  --color-sev-medium: #ecc94b;
+  --color-sev-low: #56a8ff;
+  --color-sev-info: #93a2b2;
+
+  /* categorical series (validated dark slots 1-6, plus a neutral for "other") */
+  --color-series-1: #3987e5;
+  --color-series-2: #d95926;
+  --color-series-3: #199e70;
+  --color-series-4: #c98500;
+  --color-series-5: #d55181;
+  --color-series-6: #9085e9;
+  --color-series-other: #5d6d7e;
+}
+
+/* Light theme (Settings → General → Theme). The tokens above are the dark theme; these override them. Text contrast stays >= 4.5:1. */
+:root[data-theme="light"] {
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-surface-2: #eaeef3;
+  --color-surface-3: #dfe5ec;
+  --color-line-strong: #aab6c4;
+  --color-ok: #0f7a56;
+  --color-line: #c9d1db;
+  --color-ink: #17202b;
+  --color-ink-2: #3f4b5a;
+  --color-ink-3: #596677;
+  --color-accent: #0b7a75;
+  --color-sev-critical: #b4232f;
+  --color-sev-high: #b45309;
+  --color-sev-medium: #8a6a00;
+  --color-sev-low: #1d5fc4;
+  --color-sev-info: #556070;
+  --color-series-3: #0f7a56;
+  --color-series-4: #946200;
+}
+:root[data-theme="light"] body { color-scheme: light; }
+:root[data-theme="light"] * { scrollbar-color: #b7c2cf transparent; }
+
+html, body, #root { height: 100%; }
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 4px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 35%, transparent); }
+* { scrollbar-color: #2c3b4b transparent; scrollbar-width: thin; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Page content fades in briefly on navigation; disabled by the reduced-motion rule above. */
+@keyframes pm-fade-in { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: none; } }
+main > div { animation: pm-fade-in 140ms var(--ease-ui); }

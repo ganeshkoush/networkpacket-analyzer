@@ -1,0 +1,147 @@
+{
+  "general": {
+    "theme": "system",
+    "time_format": "utc"
+  },
+  "capture": {
+    "default_interface": "",
+    "format": "pcap",
+    "max_size_mb": 0,
+    "max_duration_minutes": 0,
+    "auto_save": true,
+    "auto_analyze": true,
+    "rotation_enabled": false,
+    "rotation_size_mb": 500,
+    "rotation_minutes": 60
+  },
+  "network": {
+    "auto_select_interface": false,
+    "show_inactive_interfaces": true
+  },
+  "analysis": {
+    "dns": true,
+    "tcp": true,
+    "connection_tracking": true,
+    "domain_tracking": true,
+    "rtt": true,
+    "handshake": true,
+    "performance": true,
+    "depth": "standard",
+    "max_packets": 0
+  },
+  "detection": {
+    "sensitivity": "medium",
+    "port_scan": {
+      "enabled": true,
+      "min_ports": 15,
+      "min_confidence": 0.0
+    },
+    "syn_flood": {
+      "enabled": true,
+      "min_syn_packets": 200,
+      "min_peak_syn_per_second": 100,
+      "min_confidence": 0.0
+    },
+    "dns": {
+      "enabled": true,
+      "query_rate_per_second": 50.0,
+      "nxdomain_ratio": 0.5,
+      "min_confidence": 0.0
+    },
+    "arp": {
+      "enabled": true,
+      "min_macs_per_ip": 2,
+      "min_confidence": 0.0
+    },
+    "tcp": {
+      "enabled": true,
+      "retransmission_rate": 0.05,
+      "reset_ratio": 0.2,
+      "min_confidence": 0.0
+    },
+    "connection": {
+      "enabled": true,
+      "min_upload_mb": 10,
+      "min_confidence": 0.0
+    }
+  },
+  "performance": {
+    "track_dns_latency": true,
+    "track_retransmissions": true,
+    "track_failures": true,
+    "baseline_enabled": true,
+    "baseline_window": 30,
+    "baseline_min_samples": 5,
+    "anomaly_sensitivity": "medium",
+    "slow_dns_ms": 100.0,
+    "slow_handshake_ms": 100.0,
+    "slow_rtt_ms": 100.0
+  },
+  "domains": {
+    "track_history": true,
+    "retention_days": 0,
+    "hide_localhost": false,
+    "hide_private_ips": false,
+    "hide_local_domains": false
+  },
+  "privacy": {
+    "store_payloads": true,
+    "store_dns_queries": true,
+    "anonymize_ips": false,
+    "clear_temp_on_exit": true,
+    "data_retention_days": 0
+  },
+  "ai": {
+    "model": "",
+    "timeout_seconds": null,
+    "auto_critical": true,
+    "auto_high": true,
+    "auto_medium": true,
+    "auto_low": false,
+    "auto_min_confidence": 0.6
+  },
+  "ai_usage": {
+    "daily_limit": 50,
+    "max_auto_per_day": 20,
+    "cache_enabled": true,
+    "cache_minutes": 60
+  },
+  "notifications": {
+    "enabled": true,
+    "critical_finding": true,
+    "high_finding": true,
+    "medium_finding": false,
+    "performance_anomaly": false,
+    "capture_completed": true,
+    "analysis_completed": true,
+    "ai_completed": true,
+    "capture_error": true,
+    "analysis_error": true,
+    "sound": false,
+    "only_in_background": false
+  },
+  "storage": {
+    "max_capture_storage_gb": 50.0,
+    "auto_delete_old": false,
+    "capture_retention_days": 30,
+    "keep_analyzed": true,
+    "keep_failed": false
+  },
+  "diagnostics": {
+    "log_level": "info",
+    "save_logs": true,
+    "max_log_mb": 2,
+    "rotation": true
+  },
+  "security": {
+    "confirm_delete_captures": true,
+    "confirm_clear_history": true,
+    "allow_ai": true
+  },
+  "advanced": {
+    "backend_timeout_seconds": 30,
+    "max_concurrent_analyses": 2,
+    "debug_mode": false,
+    "show_internal_ids": false
+  }
+}

@@ -1,0 +1,660 @@
+{
+ "settings": {
+  "general": {
+   "theme": "system",
+   "time_format": "utc"
+  },
+  "capture": {
+   "default_interface": "",
+   "format": "pcap",
+   "max_size_mb": 0,
+   "max_duration_minutes": 0,
+   "auto_save": true,
+   "auto_analyze": true,
+   "rotation_enabled": false,
+   "rotation_size_mb": 500,
+   "rotation_minutes": 60
+  },
+  "network": {
+   "auto_select_interface": false,
+   "show_inactive_interfaces": true
+  },
+  "analysis": {
+   "dns": true,
+   "tcp": true,
+   "connection_tracking": true,
+   "domain_tracking": true,
+   "rtt": true,
+   "handshake": true,
+   "performance": true,
+   "depth": "standard",
+   "max_packets": 0
+  },
+  "detection": {
+   "sensitivity": "medium",
+   "port_scan": {
+    "enabled": true,
+    "min_ports": 15,
+    "min_confidence": 0.0
+   },
+   "syn_flood": {
+    "enabled": true,
+    "min_syn_packets": 200,
+    "min_peak_syn_per_second": 100,
+    "min_confidence": 0.0
+   },
+   "dns": {
+    "enabled": true,
+    "query_rate_per_second": 50.0,
+    "nxdomain_ratio": 0.5,
+    "min_confidence": 0.0
+   },
+   "arp": {
+    "enabled": true,
+    "min_macs_per_ip": 2,
+    "min_confidence": 0.0
+   },
+   "tcp": {
+    "enabled": true,
+    "retransmission_rate": 0.05,
+    "reset_ratio": 0.2,
+    "min_confidence": 0.0
+   },
+   "connection": {
+    "enabled": true,
+    "min_upload_mb": 10,
+    "min_confidence": 0.0
+   }
+  },
+  "performance": {
+   "track_dns_latency": true,
+   "track_retransmissions": true,
+   "track_failures": true,
+   "baseline_enabled": true,
+   "baseline_window": 30,
+   "baseline_min_samples": 5,
+   "anomaly_sensitivity": "medium",
+   "slow_dns_ms": 100.0,
+   "slow_handshake_ms": 100.0,
+   "slow_rtt_ms": 100.0
+  },
+  "domains": {
+   "track_history": true,
+   "retention_days": 0,
+   "hide_localhost": false,
+   "hide_private_ips": false,
+   "hide_local_domains": false
+  },
+  "privacy": {
+   "store_payloads": true,
+   "store_dns_queries": true,
+   "anonymize_ips": false,
+   "clear_temp_on_exit": true,
+   "data_retention_days": 0
+  },
+  "ai": {
+   "model": "",
+   "timeout_seconds": null,
+   "auto_critical": true,
+   "auto_high": true,
+   "auto_medium": true,
+   "auto_low": false,
+   "auto_min_confidence": 0.6
+  },
+  "ai_usage": {
+   "daily_limit": 50,
+   "max_auto_per_day": 20,
+   "cache_enabled": true,
+   "cache_minutes": 60
+  },
+  "notifications": {
+   "enabled": true,
+   "critical_finding": true,
+   "high_finding": true,
+   "medium_finding": false,
+   "performance_anomaly": false,
+   "capture_completed": true,
+   "analysis_completed": true,
+   "ai_completed": true,
+   "capture_error": true,
+   "analysis_error": true,
+   "sound": false,
+   "only_in_background": false
+  },
+  "storage": {
+   "max_capture_storage_gb": 50.0,
+   "auto_delete_old": false,
+   "capture_retention_days": 30,
+   "keep_analyzed": true,
+   "keep_failed": false
+  },
+  "diagnostics": {
+   "log_level": "info",
+   "save_logs": true,
+   "max_log_mb": 2,
+   "rotation": true
+  },
+  "security": {
+   "confirm_delete_captures": true,
+   "confirm_clear_history": true,
+   "allow_ai": true
+  },
+  "advanced": {
+   "backend_timeout_seconds": 30,
+   "max_concurrent_analyses": 2,
+   "debug_mode": false,
+   "show_internal_ids": false
+  }
+ },
+ "defaults": {
+  "general": {
+   "theme": "system",
+   "time_format": "utc"
+  },
+  "capture": {
+   "default_interface": "",
+   "format": "pcap",
+   "max_size_mb": 0,
+   "max_duration_minutes": 0,
+   "auto_save": true,
+   "auto_analyze": true,
+   "rotation_enabled": false,
+   "rotation_size_mb": 500,
+   "rotation_minutes": 60
+  },
+  "network": {
+   "auto_select_interface": false,
+   "show_inactive_interfaces": true
+  },
+  "analysis": {
+   "dns": true,
+   "tcp": true,
+   "connection_tracking": true,
+   "domain_tracking": true,
+   "rtt": true,
+   "handshake": true,
+   "performance": true,
+   "depth": "standard",
+   "max_packets": 0
+  },
+  "detection": {
+   "sensitivity": "medium",
+   "port_scan": {
+    "enabled": true,
+    "min_ports": 15,
+    "min_confidence": 0.0
+   },
+   "syn_flood": {
+    "enabled": true,
+    "min_syn_packets": 200,
+    "min_peak_syn_per_second": 100,
+    "min_confidence": 0.0
+   },
+   "dns": {
+    "enabled": true,
+    "query_rate_per_second": 50.0,
+    "nxdomain_ratio": 0.5,
+    "min_confidence": 0.0
+   },
+   "arp": {
+    "enabled": true,
+    "min_macs_per_ip": 2,
+    "min_confidence": 0.0
+   },
+   "tcp": {
+    "enabled": true,
+    "retransmission_rate": 0.05,
+    "reset_ratio": 0.2,
+    "min_confidence": 0.0
+   },
+   "connection": {
+    "enabled": true,
+    "min_upload_mb": 10,
+    "min_confidence": 0.0
+   }
+  },
+  "performance": {
+   "track_dns_latency": true,
+   "track_retransmissions": true,
+   "track_failures": true,
+   "baseline_enabled": true,
+   "baseline_window": 30,
+   "baseline_min_samples": 5,
+   "anomaly_sensitivity": "medium",
+   "slow_dns_ms": 100.0,
+   "slow_handshake_ms": 100.0,
+   "slow_rtt_ms": 100.0
+  },
+  "domains": {
+   "track_history": true,
+   "retention_days": 0,
+   "hide_localhost": false,
+   "hide_private_ips": false,
+   "hide_local_domains": false
+  },
+  "privacy": {
+   "store_payloads": true,
+   "store_dns_queries": true,
+   "anonymize_ips": false,
+   "clear_temp_on_exit": true,
+   "data_retention_days": 0
+  },
+  "ai": {
+   "model": "",
+   "timeout_seconds": null,
+   "auto_critical": true,
+   "auto_high": true,
+   "auto_medium": true,
+   "auto_low": false,
+   "auto_min_confidence": 0.6
+  },
+  "ai_usage": {
+   "daily_limit": 50,
+   "max_auto_per_day": 20,
+   "cache_enabled": true,
+   "cache_minutes": 60
+  },
+  "notifications": {
+   "enabled": true,
+   "critical_finding": true,
+   "high_finding": true,
+   "medium_finding": false,
+   "performance_anomaly": false,
+   "capture_completed": true,
+   "analysis_completed": true,
+   "ai_completed": true,
+   "capture_error": true,
+   "analysis_error": true,
+   "sound": false,
+   "only_in_background": false
+  },
+  "storage": {
+   "max_capture_storage_gb": 50.0,
+   "auto_delete_old": false,
+   "capture_retention_days": 30,
+   "keep_analyzed": true,
+   "keep_failed": false
+  },
+  "diagnostics": {
+   "log_level": "info",
+   "save_logs": true,
+   "max_log_mb": 2,
+   "rotation": true
+  },
+  "security": {
+   "confirm_delete_captures": true,
+   "confirm_clear_history": true,
+   "allow_ai": true
+  },
+  "advanced": {
+   "backend_timeout_seconds": 30,
+   "max_concurrent_analyses": 2,
+   "debug_mode": false,
+   "show_internal_ids": false
+  }
+ },
+ "constraints": {
+  "capture.default_interface": {
+   "max_length": 256,
+   "type": "number"
+  },
+  "capture.max_size_mb": {
+   "min": 0,
+   "max": 1000000,
+   "type": "integer"
+  },
+  "capture.max_duration_minutes": {
+   "min": 0,
+   "max": 100000,
+   "type": "integer"
+  },
+  "capture.rotation_size_mb": {
+   "min": 1,
+   "max": 1000000,
+   "type": "integer"
+  },
+  "capture.rotation_minutes": {
+   "min": 1,
+   "max": 100000,
+   "type": "integer"
+  },
+  "analysis.max_packets": {
+   "min": 0,
+   "max": 10000000000,
+   "type": "integer"
+  },
+  "detection.port_scan.min_ports": {
+   "min": 1,
+   "max": 65535,
+   "type": "integer"
+  },
+  "detection.port_scan.min_confidence": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.syn_flood.min_syn_packets": {
+   "min": 1,
+   "max": 100000000,
+   "type": "integer"
+  },
+  "detection.syn_flood.min_peak_syn_per_second": {
+   "min": 1,
+   "max": 100000000,
+   "type": "integer"
+  },
+  "detection.syn_flood.min_confidence": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.dns.query_rate_per_second": {
+   "min": 0.0,
+   "max": 1000000,
+   "type": "number"
+  },
+  "detection.dns.nxdomain_ratio": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.dns.min_confidence": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.arp.min_macs_per_ip": {
+   "min": 2,
+   "max": 1000,
+   "type": "integer"
+  },
+  "detection.arp.min_confidence": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.tcp.retransmission_rate": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.tcp.reset_ratio": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.tcp.min_confidence": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "detection.connection.min_upload_mb": {
+   "min": 1,
+   "max": 1000000,
+   "type": "integer"
+  },
+  "detection.connection.min_confidence": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "performance.baseline_window": {
+   "min": 5,
+   "max": 365,
+   "type": "integer"
+  },
+  "performance.baseline_min_samples": {
+   "min": 2,
+   "max": 100,
+   "type": "integer"
+  },
+  "performance.slow_dns_ms": {
+   "exclusive_min": 0,
+   "max": 60000,
+   "type": "number"
+  },
+  "performance.slow_handshake_ms": {
+   "exclusive_min": 0,
+   "max": 60000,
+   "type": "number"
+  },
+  "performance.slow_rtt_ms": {
+   "exclusive_min": 0,
+   "max": 60000,
+   "type": "number"
+  },
+  "domains.retention_days": {
+   "min": 0,
+   "max": 36500,
+   "type": "integer"
+  },
+  "privacy.data_retention_days": {
+   "min": 0,
+   "max": 36500,
+   "type": "integer"
+  },
+  "ai.model": {
+   "max_length": 100,
+   "type": "number"
+  },
+  "ai.timeout_seconds": {
+   "min": 5,
+   "max": 600,
+   "type": "integer"
+  },
+  "ai.auto_min_confidence": {
+   "min": 0.0,
+   "max": 1.0,
+   "type": "number"
+  },
+  "ai_usage.daily_limit": {
+   "min": 0,
+   "max": 100000,
+   "type": "integer"
+  },
+  "ai_usage.max_auto_per_day": {
+   "min": 0,
+   "max": 100000,
+   "type": "integer"
+  },
+  "ai_usage.cache_minutes": {
+   "min": 1,
+   "max": 10080,
+   "type": "integer"
+  },
+  "storage.max_capture_storage_gb": {
+   "exclusive_min": 0,
+   "max": 1000000,
+   "type": "number"
+  },
+  "storage.capture_retention_days": {
+   "min": 1,
+   "max": 36500,
+   "type": "integer"
+  },
+  "diagnostics.max_log_mb": {
+   "min": 1,
+   "max": 1024,
+   "type": "integer"
+  },
+  "advanced.backend_timeout_seconds": {
+   "min": 5,
+   "max": 600,
+   "type": "integer"
+  },
+  "advanced.max_concurrent_analyses": {
+   "min": 1,
+   "max": 8,
+   "type": "integer"
+  }
+ },
+ "unavailable": {
+  "general": [
+   {
+    "key": "start_on_login",
+    "label": "Start application on login",
+    "reason": "Not available yet: the desktop shell has no login-item support."
+   },
+   {
+    "key": "minimize_to_tray",
+    "label": "Minimize to system tray",
+    "reason": "Not available yet: the desktop shell has no system-tray support."
+   }
+  ],
+  "capture": [
+   {
+    "key": "buffer_size",
+    "label": "Capture buffer size",
+    "reason": "The capture library (Scapy/libpcap) is opened with its default buffer; PacketMind cannot change it."
+   }
+  ],
+  "analysis": [
+   {
+    "key": "udp",
+    "label": "Enable UDP analysis",
+    "reason": "There is no separate UDP analyzer: UDP is part of the protocol, port, connection and DNS analysis."
+   },
+   {
+    "key": "tls_metadata",
+    "label": "Enable TLS metadata analysis",
+    "reason": "PacketMind only recognises TLS to tell encrypted from cleartext traffic; it does not read certificates or server names."
+   },
+   {
+    "key": "store_packet_metadata",
+    "label": "Store packet metadata",
+    "reason": "PacketMind never keeps per-packet metadata: results are aggregates only."
+   },
+   {
+    "key": "max_memory",
+    "label": "Maximum analysis memory",
+    "reason": "Memory is bounded by fixed caps (see Analysis depth), not by a byte limit."
+   }
+  ],
+  "detection": [
+   {
+    "key": "time_window",
+    "label": "Port scan / SYN flood time window",
+    "reason": "Detectors work on whole-capture aggregates, so they have no sliding time window to configure."
+   }
+  ],
+  "domains": [
+   {
+    "key": "group_subdomains",
+    "label": "Group subdomains",
+    "reason": "Grouping needs a public-suffix list that PacketMind does not ship; grouping by the last two labels would be wrong for names like example.co.uk."
+   },
+   {
+    "key": "track_destination_ips",
+    "label": "Track destination IPs",
+    "reason": "Destination IPs are always part of the analysis; they cannot be turned off without breaking connections and findings."
+   }
+  ],
+  "ai": [
+   {
+    "key": "max_tool_calls",
+    "label": "Maximum tool calls",
+    "reason": "The model cannot call tools. PacketMind runs a fixed read-only set of local analysis functions itself, so there is nothing to cap."
+   },
+   {
+    "key": "auto_anomalies",
+    "label": "Automatically investigate performance anomalies",
+    "reason": "Automatic investigation only runs for live-capture security findings."
+   }
+  ],
+  "ai_usage": [
+   {
+    "key": "per_capture_limit",
+    "label": "Maximum investigations per capture",
+    "reason": "Requests are counted per day, not per capture."
+   }
+  ],
+  "security": [
+   {
+    "key": "external_integrations",
+    "label": "Allow external integrations",
+    "reason": "PacketMind has no external integrations, so there is nothing to allow."
+   }
+  ],
+  "advanced": [
+   {
+    "key": "max_concurrent_captures",
+    "label": "Maximum concurrent captures",
+    "reason": "PacketMind supports one live capture at a time."
+   },
+   {
+    "key": "developer_tools",
+    "label": "Developer tools",
+    "reason": "Not exposed in release builds."
+   },
+   {
+    "key": "experimental",
+    "label": "Experimental features",
+    "reason": "There are no experimental features in this version."
+   }
+  ]
+ },
+ "restart_required": [
+  "advanced.max_concurrent_analyses"
+ ],
+ "sections": [
+  "general",
+  "capture",
+  "network",
+  "analysis",
+  "detection",
+  "performance",
+  "domains",
+  "privacy",
+  "ai",
+  "ai_usage",
+  "notifications",
+  "storage",
+  "diagnostics",
+  "security",
+  "advanced"
+ ],
+ "version": 0,
+ "ai": {
+  "configured": false,
+  "source": "none",
+  "secure_storage_available": true,
+  "secure_storage": "Keyring",
+  "model": "gemini-2.5-flash",
+  "last_test": null
+ },
+ "ai_permissions": {
+  "allowed": [
+   "Read network statistics",
+   "Read findings",
+   "Read performance metrics",
+   "Read domain statistics"
+  ],
+  "never": [
+   "Execute commands",
+   "Modify firewall",
+   "Modify routing",
+   "Modify network configuration",
+   "Delete files",
+   "Block IP addresses",
+   "Execute code"
+  ]
+ },
+ "ai_data_policy": [
+  {
+   "item": "Raw PCAP files",
+   "policy": "NEVER SENT"
+  },
+  {
+   "item": "Raw packet payloads",
+   "policy": "NEVER SENT"
+  },
+  {
+   "item": "Structured analysis",
+   "policy": "ALLOWED"
+  },
+  {
+   "item": "Aggregated statistics",
+   "policy": "ALLOWED"
+  }
+ ]
+}
