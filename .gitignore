@@ -35,3 +35,4 @@ reports/*
 .vscode/
 .env.*
 !.env.example
+CLAUDE.md
